@@ -1,8 +1,13 @@
-# Web application using React
+# Web application using React By Matan Levi
 
-Users Web app.
+Nice Users Web-App with strongly typed store, clean code and not repeated.
 
 Deployed on Heroku in the link: http://users-web-application.herokuapp.com/
+
+## Used Technologies
+### `React`
+### `React-Redux`
+### `SCSS`
 
 ## Available Script
 
