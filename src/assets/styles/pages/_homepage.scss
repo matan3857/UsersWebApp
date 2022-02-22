@@ -1,0 +1,22 @@
+.home-page {
+  background-color: #f9fafc;
+  text-align: center;
+    color: #172b4d;
+  .home-page-continer {
+    text-align: center;
+    background-color: #fff;
+    border-radius: 3px;
+    margin: 0 auto;
+    align-items: center;
+    padding: 30px 40px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.116);
+    p {
+      color: #5e6c84;
+      text-align: center;
+      font-size: 1.5rem;
+      line-height: 28px;
+      font-weight: 700;
+      margin-bottom: 25px;
+    }
+  }
+}

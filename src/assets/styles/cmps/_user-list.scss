@@ -1,0 +1,47 @@
+.users-list {
+    background: #e5e5e5;
+    border-radius: 6px;
+    box-shadow: 0 2px 2px 0 rgb(0 0 0 / 14%), 0 3px 1px -2px rgb(0 0 0 / 20%), 0 1px 5px 0 rgb(0 0 0 / 12%);
+    padding: 60px 0 30px 0;
+    .user-card {
+        justify-content: space-around;
+        text-align: center;
+        width: 100%;
+        width: 400px;
+        min-height: 230px;
+        margin: 0 5px 0;
+        margin-bottom: 70px;
+        padding-bottom: 10px;
+        border-radius: 6px;
+        color: rgba(0, 0, 0, 0.87);
+        background: #fff;
+        box-shadow: 0 2px 2px 0 rgb(0 0 0 / 14%), 0 3px 1px -2px rgb(0 0 0 / 20%), 0 1px 5px 0 rgb(0 0 0 / 12%);
+        .user-img {
+            max-width: 72px;
+            max-height: 72px;
+            margin: -50px auto 0;
+            border-radius: 50%;
+            overflow: hidden;
+            box-shadow: 0 16px 38px -12px rgb(0 0 0 / 56%), 0 4px 25px 0px rgb(0 0 0 / 12%),
+                0 8px 10px -5px rgb(0 0 0 / 20%);
+            img {
+                width: 100%;
+                height: auto;
+            }
+        }
+        .user-info {
+            padding: 15px 30px;
+            border-radius: 10px;
+            span,
+            h3,
+            h4 {
+                overflow-wrap: break-word;
+            }
+        }
+        .user-actions {
+            button {
+                margin: 0 5px 0;
+            }
+        }
+    }
+}
