@@ -1,13 +1,15 @@
 import React, { useState, useEffect } from "react";
 import { connect } from "react-redux";
 import { onUpdateUser, onAddUser } from "../store/user.actions";
-import { loadUsers } from "../services/user.service";
+import { loadUsers, filterUsers } from "../services/user.service";
 import { UserList } from '../cmps/UserList';
 import { Modal } from "../cmps/Modal";
 import { LoaderSpinner } from "../cmps/LoaderSpinner"
+import { UserFilter } from "../cmps/UserFilter"
+import { userService } from '../services/user.service';
 
 export function _Homepage(props) {
-  const { users } = props
+  const { users, filterBy } = props
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [userToEdit, setUserToEdit] = useState(null);
   const [isAddMode, setIsAddMode] = useState(false);
@@ -28,14 +30,17 @@ export function _Homepage(props) {
     setIsModalOpen(true)
   }
 
+  const filteredUsers = userService.filterUsers(users , filterBy)
+
   return (
     <section className="home-page">
+      <UserFilter />
       <button className="light-btn" onClick={onAddNewUser}>Add new user</button>
       {!users || !users.length ?
         <LoaderSpinner />
         :
         <>
-          <UserList users={users} setOpenModal={setIsModalOpen} setUserToEdit={setUserToEdit} setIsAddMode={setIsAddMode} />
+          <UserList users={filteredUsers} setOpenModal={setIsModalOpen} setUserToEdit={setUserToEdit} setIsAddMode={setIsAddMode} />
         </>
       }
       {isModalOpen && <Modal setOpenModal={setIsModalOpen} onSaveChanges={onSaveChanges} userToEdit={userToEdit} isAddMode={isAddMode} />}
@@ -45,7 +50,8 @@ export function _Homepage(props) {
 
 function mapStateToProps(state) {
   return {
-    users: state.userModule.users
+    users: state.userModule.users,
+    filterBy: state.userModule.filterBy,
   };
 }
 

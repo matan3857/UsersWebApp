@@ -1,5 +1,11 @@
 const initialState = {
     users: [],
+    filterBy: {
+        email: '',
+        name: '',
+        location: '',
+        id:''
+    },
 }
 export function userReducer(state = initialState, action) {
     var newState = state;
@@ -20,11 +26,14 @@ export function userReducer(state = initialState, action) {
             users = state.users.filter(user => user.id.value !== action.userId)
             newState = { ...state, users }
             break
+        case 'SET_FILTER':
+            newState = { ...state, filterBy: { ...state.filterBy, ...action.filterBy } }
+            break
 
         default:
-        // For debug:
-        // window.userState = newState;
-        // console.log('State:', newState);
     }
+    // For debug:
+    // window.userState = newState;
+    // console.log('State:', newState);
     return newState;
 }
