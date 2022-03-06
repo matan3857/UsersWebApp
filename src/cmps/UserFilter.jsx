@@ -21,12 +21,10 @@ function _UserFilter(props) {
     return (
         <form className="user-filter-container" onSubmit={(ev) => { ev.preventDefault(); }}>
             <div className='filter-options'>
-                <div className='filter-option'>
-                    <input type='search' value={userFilterBy.name} name='name' className="user-input" placeholder='Filter by user name' onChange={handleChange} />
-                    <input type='search' value={userFilterBy.email} name='email' className="user-input" placeholder='Filter by user email' onChange={handleChange} />
-                    <input type='search' value={userFilterBy.id} name='id' className="user-input" placeholder='Filter by user id' onChange={handleChange} />
-                    <input type='search' value={userFilterBy.location} name='location' className="user-input" placeholder='Filter by user location' onChange={handleChange} />
-                </div>
+                <input type='search' value={userFilterBy.name} name='name' className="user-input" placeholder='Search username' onChange={handleChange} />
+                <input type='search' value={userFilterBy.email} name='email' className="user-input" placeholder='Search email' onChange={handleChange} />
+                <input type='search' value={userFilterBy.id} name='id' className="user-input" placeholder='Search user id' onChange={handleChange} />
+                <input type='search' value={userFilterBy.location} name='location' className="user-input" placeholder='Search location' onChange={handleChange} />
             </div>
         </form >
     )
