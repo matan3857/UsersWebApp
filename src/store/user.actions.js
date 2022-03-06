@@ -62,9 +62,6 @@ export const setFilterBy = (filterBy) => {
                 type: "SET_FILTER",
                 filterBy
             })
-            // console.log('filterBy from actions',filterBy)
-            // loadUsers(filterBy)(dispatch)
-            // return filterBy
         }
         catch (err) {
             console.log('Cannot update filterBy', err)

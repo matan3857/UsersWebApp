@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { connect } from "react-redux";
-// import { setFilterBy, loadUsers } from "../store/user.actions";
 import { setFilterBy } from "../store/user.actions";
 
 function _UserFilter(props) {
-    const { filterBy, users } = props
+    const { filterBy } = props
     const [userFilterBy, setUserFilterBy] = useState(filterBy)
 
     useEffect(() => {
